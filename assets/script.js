@@ -35,30 +35,24 @@ $("#hour17 .description").val(localStorage.getItem("hour17"));
 
 function trackTime() {
   var timeNow = moment().hour();
- 
+
   //Browse over timeblocks
   $(".description").each(function () {
     var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
-    
+
 
     //Check time in blocks and add child for backround colors  
 
     if (timeBlock < timeNow) {
-      $(this).hour("future");
-      $(this).hour("present");
-      $(this).hour("past");
+      $(this).parent().addClass("past");
       //this is in the past
     }
     else if (timeBlock === timeNow) {
-      $(this).hour("past");
-      $(this).hour("future");
-      $(this).hour("present");
+      $(this).parent().addClass("present");
       //this is the current time
     }
     else {
-      $(this).hour("present");
-      $(this).hour("past");
-      $(this).hour("future");
+      $(this).parent().addClass("future");
       //this is in the future
 
     }
@@ -66,13 +60,9 @@ function trackTime() {
 
   })
 
-}
-
-function main() {
-  showCurrent(); {
-
-  }
 
 }
+
+
 
 // WHEN I refresh the page,THEN the saved events persist
