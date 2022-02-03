@@ -36,7 +36,7 @@ The following animation demonstrates the application functionality:
 
 ## Screenshot
 
-<img src=./assets/workday.png/>
+<img src=./assets/workday.png  style="width:600px;height:700;"/>
 
 ## Grading Requirements
 
