@@ -33,32 +33,33 @@ $("#hour17 .description").val(localStorage.getItem("hour17"));
 
 // WHEN I view the timeblocks for that day THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
-
 function trackTime() {
   var timeNow = moment().hour();
-
+ 
   //Browse over timeblocks
-  $(".col-am-1 hour").each(function () {
+  $(".description").each(function () {
     var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
+    
 
-
-  //Check time in blocks and add child for backround colors  
+    //Check time in blocks and add child for backround colors  
 
     if (timeBlock < timeNow) {
-      $(this).col-10-description("future");
-      $(this).col-10-description("present");
-      $(this).col-10-description("past");
-
+      $(this).hour("future");
+      $(this).hour("present");
+      $(this).hour("past");
+      //this is in the past
     }
     else if (timeBlock === timeNow) {
-      $(this).col-10-description("past");
-      $(this).col-10-description("future");
-      $(this).col-10-description("present");
+      $(this).hour("past");
+      $(this).hour("future");
+      $(this).hour("present");
+      //this is the current time
     }
     else {
-      $(this).col-10-description("present");
-      $(this).col-10-description("past");
-      $(this).col-10-description("future");
+      $(this).hour("present");
+      $(this).hour("past");
+      $(this).hour("future");
+      //this is in the future
 
     }
 
