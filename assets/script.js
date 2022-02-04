@@ -44,15 +44,15 @@ function trackTime() {
     //Check time in blocks and add child for backround colors  
 
     if (timeBlock < timeNow) {
-      $(this).parent().addClass("past");
+      $(this).addClass("past");
       //this is in the past
     }
     else if (timeBlock === timeNow) {
-      $(this).parent().addClass("present");
+      $(this).addClass("present");
       //this is the current time
     }
     else {
-      $(this).parent().addClass("future");
+      $(this).addClass("future");
       //this is in the future
 
     }
@@ -63,6 +63,6 @@ function trackTime() {
 
 }
 
-
+trackTime();
 
 // WHEN I refresh the page,THEN the saved events persist
